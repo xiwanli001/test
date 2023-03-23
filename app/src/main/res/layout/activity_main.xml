@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    tools:context="com.moon.razernexu.MainActivity">
+
+
+<!--    <com.moon.razernexu.view.TabHorizontalGridView-->
+<!--        android:id="@+id/hg_title"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:layout_marginTop="67dp"-->
+<!--        android:clipChildren="false"-->
+<!--        android:clipToPadding="false"-->
+<!--        android:paddingStart="48dp"-->
+<!--        android:paddingEnd="48dp"-->
+<!--        app:focusOutEnd="true"-->
+<!--        app:focusOutFront="true"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <com.moon.razernexu.view.TabViewPager-->
+<!--        android:id="@+id/vp_content"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+
+    <com.moon.razernexu.view.TabVerticalGridView
+        android:id="@+id/hg_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:paddingStart="48dp"
+        android:paddingTop="80dp"
+        android:paddingEnd="48dp"
+        android:paddingBottom="50dp"
+        app:focusOutEnd="true"
+        app:focusOutSideStart="false"
+        app:focusOutSideEnd="false"
+        android:defaultFocusHighlightEnabled="true"
+        app:focusOutFront="true" />
+
+    <ProgressBar
+        android:id="@+id/pb_loading"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="visible"
+        />
+
+    <com.moon.razernexu.view.ScaleConstraintLayout
+        android:id="@+id/cl_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/selector_focus_bg_corner15_without_default_bg"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:nextFocusDown="@+id/hg_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="30dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="5dp"
+            android:text="已安装应用"
+            android:textColor="@color/colorWhite"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+    </com.moon.razernexu.view.ScaleConstraintLayout>
+
+    <com.moon.razernexu.view.ScaleConstraintLayout
+        android:id="@+id/cl_history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/selector_focus_bg_corner15_without_default_bg"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:nextFocusDown="@+id/hg_title"
+        app:layout_constraintLeft_toRightOf="@+id/cl_search"
+        app:layout_constraintTop_toTopOf="@+id/cl_search">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="30dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="5dp"
+            android:text="历史"
+            android:textColor="@color/colorWhite"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/history"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+    </com.moon.razernexu.view.ScaleConstraintLayout>
+
+    <com.moon.razernexu.view.ScaleConstraintLayout
+        android:id="@+id/cl_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/selector_focus_bg_corner15_without_default_bg"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:nextFocusDown="@+id/hg_title"
+        app:layout_constraintLeft_toRightOf="@+id/cl_history"
+        app:layout_constraintTop_toTopOf="@+id/cl_history">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="30dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="5dp"
+            android:text="登录"
+            android:textColor="@color/colorWhite"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/login"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+    </com.moon.razernexu.view.ScaleConstraintLayout>
+
+    <com.moon.razernexu.view.ScaleConstraintLayout
+        android:id="@+id/cl_open_vip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/selector_focus_bg_corner15_without_default_bg"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:maxWidth="305dp"
+        android:nextFocusDown="@+id/hg_title"
+        app:layout_constraintLeft_toRightOf="@+id/cl_login"
+        app:layout_constraintTop_toTopOf="@+id/cl_login">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="1"
+            android:maxWidth="280dp"
+            android:paddingStart="30dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="5dp"
+            android:singleLine="true"
+            android:text="开通VIP   燃爆九月，会员首月仅16元 点击开通"
+            android:textColor="@color/colorWhite"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/vip"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+    </com.moon.razernexu.view.ScaleConstraintLayout>
+
+    <TextView
+        android:id="@+id/iv_app_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="48dp"
+        android:gravity="start|center"
+        android:text="RazerNexu"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="1dp"
+        android:layout_height="12dp"
+        android:layout_marginEnd="9dp"
+        android:background="#5d5e60"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_app_logo"
+        app:layout_constraintRight_toLeftOf="@+id/iv_app_logo"
+        app:layout_constraintTop_toTopOf="@+id/iv_app_logo" />
+
+    <TextClock
+        android:id="@+id/tp_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:format12Hour="hh:mm"
+        android:textColor="@color/colorWhite"
+        android:textSize="13sp"
+        android:theme="@style/MyTimePicker"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_app_logo"
+        app:layout_constraintRight_toLeftOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/iv_app_logo" />
+
+
+    <ImageView
+        android:id="@+id/iv_network"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="11dp"
+        android:src="@drawable/no_net"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_app_logo"
+        app:layout_constraintRight_toLeftOf="@+id/tp_time"
+        app:layout_constraintTop_toTopOf="@+id/iv_app_logo"
+        tools:ignore="ContentDescription" />
+
+    <com.moon.razernexu.view.ScaleTextView
+        android:id="@+id/tv_ad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="11dp"
+        android:background="@drawable/selector_focus_bg_corner15_without_default_bg"
+        android:drawableStart="@drawable/gift"
+        android:gravity="center|start"
+        android:nextFocusDown="@+id/hg_title"
+        android:paddingStart="15dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="5dp"
+        android:text="新人礼包"
+        android:textColor="@color/colorWhite"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_app_logo"
+        app:layout_constraintRight_toLeftOf="@+id/iv_network"
+        app:layout_constraintTop_toTopOf="@+id/iv_app_logo" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/id_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="tv_ad,iv_network,tp_time,view,iv_app_logo,cl_open_vip,cl_login,cl_history,cl_search,hg_title" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
