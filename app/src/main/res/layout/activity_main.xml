@@ -68,7 +68,6 @@
         android:clickable="true"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:nextFocusDown="@+id/hg_title"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -106,7 +105,6 @@
         android:clickable="true"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:nextFocusDown="@+id/hg_title"
         app:layout_constraintLeft_toRightOf="@+id/cl_search"
         app:layout_constraintTop_toTopOf="@+id/cl_search">
 
@@ -144,7 +142,6 @@
         android:clickable="true"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:nextFocusDown="@+id/hg_title"
         app:layout_constraintLeft_toRightOf="@+id/cl_history"
         app:layout_constraintTop_toTopOf="@+id/cl_history">
 
@@ -183,7 +180,6 @@
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:maxWidth="305dp"
-        android:nextFocusDown="@+id/hg_title"
         app:layout_constraintLeft_toRightOf="@+id/cl_login"
         app:layout_constraintTop_toTopOf="@+id/cl_login">
 
@@ -273,7 +269,6 @@
         android:background="@drawable/selector_focus_bg_corner15_without_default_bg"
         android:drawableStart="@drawable/gift"
         android:gravity="center|start"
-        android:nextFocusDown="@+id/hg_title"
         android:paddingStart="15dp"
         android:paddingTop="5dp"
         android:paddingEnd="10dp"
@@ -289,6 +284,6 @@
         android:id="@+id/id_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="tv_ad,iv_network,tp_time,view,iv_app_logo,cl_open_vip,cl_login,cl_history,cl_search,hg_title" />
+        app:constraint_referenced_ids="tv_ad,iv_network,tp_time,view,iv_app_logo,cl_open_vip,cl_login,cl_history,cl_search" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
